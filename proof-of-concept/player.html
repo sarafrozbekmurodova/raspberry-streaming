@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pi Streamer</title>
+        <link rel="icon" type="image/x-icon" href="/images/raspberry-pi.ico">
+    </head>
+    <body>
+        <h3>Pi Streamer</h3>
+        <video id="video" controls width="720"></video>
+        <!-- https://www.npmjs.com/package/hls.js/v/0.8.5 -->
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+        <script>
+            const url = '/hls/bbb.m3u8'; // relative to server root
+            const video = document.getElementById('video');
+            if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // Safari / iOS
+                video.src = url;
+            } else if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+            } else {
+                document.body.insertAdjacentHTML('beforeend', '<p>No HLS support.</p>');
+            }
+        </script>
+    </body>
+</html>
