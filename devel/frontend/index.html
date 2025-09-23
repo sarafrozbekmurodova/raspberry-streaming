@@ -1,0 +1,32 @@
+<!doctype html> 
+<html lang="en"> 
+        <head> 
+                <meta charset="utf-8"/> 
+                <meta name="viewport" content="width=device-width,initial-scale=1" /> 
+                <title>Pi Streamer - Library</title> 
+                <link rel="icon" type="image/x-icon" href="/images/raspberry-pi.ico"> 
+                <link rel="stylesheet" href="css/index.css"> 
+                <script type="text/javascript" src="js/index.js" defer></script> 
+        </head> 
+        <body> 
+                <h1>Pi Streamer</h1> 
+ 
+                <form id="uploadForm"> 
+                        <label> 
+                                Choose video: 
+                                <input type="file" id="fileInput" name="file" accept="video/*" required> 
+                        </label> 
+                        <button class="btn" type="submit">Upload</button> 
+                </form> 
+ 
+                <div id="progressWrap" style="display:none;"> 
+                        <div id="progressBar"><i></i></div> 
+                        <div id="progressText" style="margin-top:6px;font-size:0.9rem;color:#333;"></div> 
+                </div> 
+ 
+                <section class="media-list" id="mediaList">
+                        <h3>Media library</h3>
+                        <div id="items">Loading…</div>
+                </section>
+        </body>
+</html>
