@@ -1,6 +1,6 @@
 # raspberry-streaming
 
-## Proof of concept - steps taken:
+## Current development - steps taken so far:
 
 - ### install packages:
     ```
