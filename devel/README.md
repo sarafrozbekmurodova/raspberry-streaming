@@ -22,7 +22,7 @@
       sudo nginx -t && sudo systemctl reload nginx
       ```
     - new config also sets up endpoints for backend
-    - always execute the following after chaning config of nginx: `sudo nginx -t && sudo systemctl reload nginx`
+    - always execute the following after changing config of nginx: `sudo nginx -t && sudo systemctl reload nginx`
 
 - ### set up backend:
     - ```
