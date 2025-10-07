@@ -13,6 +13,17 @@
     sudo mkdir -p /var/www/pi_streamer/media/
     sudo chown -R "$(id -u):$(id -g)" /var/www/pi_streamer
     ```
+- ### set up certificates:
+    - install `mkcert`
+    - ensure `certutil` is working by also installing `libnss3-tools`
+    - ```
+      mkcert -install
+      mkcert local.pi-streamer.com localhost 127.0.0.1 ::1
+      ```
+    - rename the two `.pem` files as `local.pi-streamer.com.pem` and 
+      `local.pi-streamer.com-key.pem`
+    - add `127.0.0.1 local.pi-streamer.com` to /etc/hosts in order to register
+      the domain name
 
 - ### configure nginx:
     - copy nginx config file to `/etc/nginx/sites-available/pi_streamer`
@@ -22,6 +33,7 @@
       sudo nginx -t && sudo systemctl reload nginx
       ```
     - new config also sets up endpoints for backend
+    - new config also ensures connection is https
     - always execute the following after changing config of nginx: `sudo nginx -t && sudo systemctl reload nginx`
 
 - ### set up backend:
