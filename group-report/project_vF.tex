@@ -30,8 +30,10 @@ The project was built using a Flask-based backend for handling file uploads and 
 The implemented solution successfully demonstrates real-time conversion of uploaded videos into multi-resolution HLS streams accessible via a web player. The project demonstrates how modern media protocols and free software can be used to create a functional streaming workflow, providing a foundation for future extensions such as live streaming, authentication, or cloud-based scalability. Given the limitations of the Raspberry Pi, the project demonstrates simple functionality.
 \end{abstract}
 
-\tableofcontents
+\newpage
 
+\tableofcontents
+\newpage
 \section{Introduction}
 In recent years, the proliferation of compact, low-cost computing platforms such as the Raspberry Pi has significantly broadened opportunities for experimentation in applied computer science. These platforms provide sufficient computational power to implement distributed systems, network services, and lightweight applications, while remaining accessible to students and researchers. This project investigates the design and implementation of a multimedia streaming service hosted on a Raspberry Pi, with the aim of understanding both the technical processes involved and the collaborative practices required to deliver a functioning system.
 
@@ -40,7 +42,7 @@ The project is situated within the broader context of online video consumption, 
 Equally central to the project is the process of teamwork and knowledge sharing. Our group adopted a rotating role model in which members alternated as coordinator, developer, tester, and documentation writer. This arrangement ensured that responsibilities were distributed equitably, that all members were exposed to different aspects of the project, and that collaboration was reinforced through regular communication. Progress was tracked through scheduled milestones, allowing us to assess whether the system was developing in line with expectations.
 
 The report documents both technical achievements and reflections on the collaborative process. Specifically, it describes the research and methodological choices underlying the implementation, the ethical considerations of deploying a streaming service, and the lessons learned during development. The structure of the report is as follows: section 2 surveys related work and comparable implementations. Section 3 presents the methodological framework guiding the project. Section 4 considers ethical questions relevant to the design and deployment of streaming technologies. Section 5 outlines the details of the implementation, including architectural decisions and testing procedures. Section 6 summarises team contributions and role allocation. Finally, we conclude with section 7.
-
+\newpage
 \section{Background / Related Work}
 Streaming media technologies have undergone a series of evolutionary stages, beginning with file download-and-playback approaches and progressing towards adaptive streaming protocols that dominate contemporary usage. Initial attempts to improve interactivity and reduce latency, such as the Real Time Streaming Protocol (RTSP), provided a foundation for streaming but were hindered by compatibility issues and limited scalability. The subsequent emergence of HTTP-based streaming marked a turning point, allowing video segments to be delivered over standard web infrastructure.
 
@@ -51,7 +53,7 @@ Implementation tools have also matured. The open-source utility \texttt{ffmpeg} 
 Within the academic literature, research on multimedia streaming highlights trade-offs between quality, compression, and latency. Fielding’s \cite{fielding2000} work on architectural styles remains influential in framing discussions of scalability and modularity in distributed systems. Further studies emphasise the increasing demand for adaptive methods that respond to heterogeneous devices and variable network conditions.
 
 At the level of educational practice, projects involving Raspberry Pi streaming are not uncommon. Prior initiatives have demonstrated the feasibility of using the device as a media centre or a server for small-scale deployments. However, relatively few projects integrate these technical exercises with structured reflections on teamwork, project management, and ethical responsibility. This report therefore positions itself at the intersection of technical exploration and collaborative learning.
-
+\newpage
 \section{Methods}
 
 \begin{figure}[H]
@@ -140,6 +142,7 @@ At the level of educational practice, projects involving Raspberry Pi streaming 
 
 \subsection{Reflection and Adjustment.} Throughout the process, the group evaluated outcomes in light of objectives. Hardware acceleration was attempted but limited by the Raspberry Pi’s performance. Difficulties with certificate configuration delayed the introduction of HTTPS, but these obstacles ultimately reinforced understanding of security protocols.
 
+\newpage
 \section{Ethical Considerations}
 Although the project did not involve human subjects, it engaged several ethical dimensions that required careful reflection.
 
@@ -152,7 +155,7 @@ Third, the use of artificial intelligence tools in the preparation of the report
 Finally, the collaborative dimension of the project required adherence to ethical standards of fairness and transparency. Rotating roles and a conflict resolution procedure were introduced to prevent unequal distribution of labor and to manage potential disagreements constructively. Although conflicts did not arise, the framework reinforced accountability and trust within the group.
 
 In our case we approach ethics using the 'ethical egotism' framework, since we prioritize our need/desire to stream content, over the concern of copyrighted content and piracy issues.
-
+\newpage
 \section{Implementation}
 \subsection{Technical Overview.}
 \subsubsection{Architecture.}
@@ -198,7 +201,7 @@ As mentioned before, even though originally we had intentions of generating mult
     \item the storage space on our raspberry Pi was strictly limited to 16GB, thus this idea was deemed as a poor usage of our resources
     \item generating multiples playlists and syncing them through a master playlist was very error prone and consistently caused bugs
 \end{itemize}
-
+\newpage
 \subsection{Summary.}
 The implemented system is a practical, end-to-end HLS streaming prototype: users can upload files via a simple frontend, the backend transcodes and produces HLS content with FFmpeg, nginx serves the static HLS artifacts to any device on the LAN, and the client UI supports standalone playback with cross-browser compatibility using the native HLS + hls.js fallback pattern. The design prioritizes simplicity, reproducibility and clarity while leaving clear paths for performance hardening and feature expansion. The end result of our implementation is shown in figures~\ref{fig:pi-streamer-homepage} and ~\ref{fig:pi-streamer-playerpage}.
 
@@ -215,7 +218,7 @@ The implemented system is a practical, end-to-end HLS streaming prototype: users
     \caption{Pi-Streamer Player page}
     \label{fig:pi-streamer-playerpage}
 \end{figure}
-
+\newpage
 \section{Contributions}
 Each member contributed to all aspects of the project, but specific responsibilities were distributed as follows:
 
@@ -229,10 +232,10 @@ Each member contributed to all aspects of the project, but specific responsibili
 \textbf{Sarafroz Bekmurodova (Documentation Writer):} Drafted the report in LaTeX, synthesised related work, and ensured citation consistency. Supported interface evaluation and coordinated proofreading.
 
 All members engaged in research, implementation, and preparation of the final presentation. Communication was maintained through online platforms, and a clear conflict resolution protocol was established, though not required. The balanced distribution of tasks reinforced fairness and provided all members with experience across different aspects of the project lifecycle.
-
+\newpage
 \section{Conclusion}
 In this project we successfully implemented a media streaming service hosted on a Raspberry Pi, combining Nginx, FFmpeg, Flask, and hls.js into a working system. Users can upload media files, which are processed into HLS format and securely streamed over HTTPS to a variety of client devices. While we faced challenges with integration, configuration, and adapting to differences across environments, these difficulties provided valuable hands-on experience with networking, web servers, and media handling. Overall, the project not only met its technical goals but also deepened our practical understanding of building and deploying networked applications.
-
+\newpage
 \section{Reference List}
 \bibliographystyle{ieeetr}
 \begin{thebibliography}{9}
